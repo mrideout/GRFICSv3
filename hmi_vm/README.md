@@ -14,8 +14,8 @@ The ScadaBR VM is both an HMI and historian.
 2. Install package updates and extra packages to ease debugging:
 
         apt-get update
-	apt-get dist-upgrade
-	apt-get install telnet nmap ssh
+        apt-get dist-upgrade
+        apt-get install telnet nmap ssh
 
 3. Power the VM off and change the network adapter to the host-only 192.168.95.0/24 network. Set the static IP address to 192.168.95.5 by using `sudo nano /etc/network/interfaces` and making the file look like:
 
@@ -51,7 +51,7 @@ The ScadaBR VM is both an HMI and historian.
 
 ### Usage
 
-The default web interface username and password are "admin"
+The default web interface username and password are "admin".
 
 Click the "Watchlist" button to view historian data.  Click the "Graphical Views" button to view the HMI.
 

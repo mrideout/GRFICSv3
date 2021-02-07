@@ -40,7 +40,7 @@ The HMI VM (named ScadaBR) primarily contains an operator HMI created using the 
 
 ### Workstation
 
-The workstation VM is an Ubuntu 20.04 machine with software used for launching an attack. This VM is assigned IP address 192.168.95.6.
+The workstation VM is an Ubuntu 20.04 machine with the software used for launching an attack. This VM is assigned IP address 192.168.95.6.
 
 #### Installing from scratch
 
