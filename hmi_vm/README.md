@@ -13,15 +13,13 @@ The ScadaBR VM is both an HMI and historian.
 
 2. Power the VM off and change the network adapter to the host-only 192.168.95.0/24 network. Set the static IP address to 192.168.95.5 by using `sudo nano /etc/network/interfaces` and making the file look like:
 
-    ```
-auto lo
-iface lo inet loopback
+        auto lo
+        iface lo inet loopback
 
-allow-hotplug enp0s3
-iface enp0s3 inet static
-address 192.168.95.5
-netmask 255.255.255.0
-```
+        allow-hotplug enp0s3
+        iface enp0s3 inet static
+        address 192.168.95.5
+        netmask 255.255.255.0
 
 3. Restart networking: `sudo systemctl restart networking`
 
