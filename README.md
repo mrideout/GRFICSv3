@@ -54,6 +54,8 @@ The workstation VM is an Ubuntu 20.04 machine with the software used for launchi
 
 #### Pre-built VMs
 
+This procedure assumes you're using VirtualBox. See [this document](vmware-fusion.md) if you're a macOS user who prefers to use VMWare Fusion, or encounters issues using VirtualBox.
+
 1. Download VMs:
 
    - [Simulation VM](https://netorgft4230013-my.sharepoint.com/:u:/g/personal/dformby_fortiphyd_com/EaBeAxbF6xtEumdsJ7npVz0BeECJnseAMsfAbaLwV3sKOg?e=JRvkcS) - MD5=02af6c2502ecaab6c6d138deb560b27d
