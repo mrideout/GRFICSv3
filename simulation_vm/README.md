@@ -14,50 +14,44 @@ For installation, first keep the VM on a single NAT adapter in VirtualBox to mak
 3. Create a symlink to the apache folder `sudo ln -s ~/GRFICSv2/simulation_vm/web_visualization/* /var/www/html`
 
 #### Networking
-If you have not already, add 2 host-only adapters in VirtualBox:
 
-VirtualBox Host-Only Ethernet Adapter #2: 192.168.95.111 and 255.255.255.0 netmask
-VirtualBox Host-Only Ethernet Adapter #3: 192.168.90.111 and 255.255.255.0 netmask
+1. If you have not already, add host-only adapter in VirtualBox: with a 192.168.95.111 IP address and 255.255.255.0 netmask.
 
-The simulation VM needs to be assigned the ip addresses 192.168.95.10-15 on the 192.168.95.111 host-only network. Power the VM down, and change the NAT adapter to the host-only adapter for the 95.111 network. 
+2. Power the VM down, and change the network adapter to the host-only adapter for 192.168.95.111.
 
-1. Edit the interface file: `sudo nano /etc/network/interfaces` to this:
- ```
-auto lo
-iface lo inet loopback
+3. Edit the interface file: `sudo nano /etc/network/interfaces` to this, where [NIC] is the name of your network, most likely enp0s3:
 
-auto [NIC]:0
-iface [NIC]:0 inet static
-address 192.168.95.10
-netmask 255.255.255.0
+        auto lo
+        iface lo inet loopback
 
-auto [NIC]:1
-iface [NIC]:1 inet static
-address 192.168.95.11
-netmask 255.255.255.0
+        auto [NIC]:0
+        iface [NIC]:0 inet static
+        address 192.168.95.10
+        netmask 255.255.255.0
 
-auto [NIC]:2
-iface [NIC]:2 inet static
-address 192.168.95.12
-netmask 255.255.255.0
+        auto [NIC]:1
+        iface [NIC]:1 inet static
+        address 192.168.95.11
+        netmask 255.255.255.0
 
-auto [NIC]:3
-iface [NIC]:3 inet static
-address 192.168.95.13
-netmask 255.255.255.0
+        auto [NIC]:2
+        iface [NIC]:2 inet static
+        address 192.168.95.12
+        netmask 255.255.255.0
 
-auto [NIC]:4
-iface [NIC]:4 inet static
-address 192.168.95.14
-netmask 255.255.255.0
+        auto [NIC]:3
+        iface [NIC]:3 inet static
+        address 192.168.95.13
+        netmask 255.255.255.0
 
-auto [NIC]:5
-iface [NIC]:5 inet static
-address 192.168.95.15
-netmask 255.255.255.0
-```
-where [NIC] is the name of your network, most likely enp0s3
+        auto [NIC]:4
+        iface [NIC]:4 inet static
+        address 192.168.95.14
+        netmask 255.255.255.0
 
-2. Restart networking: `sudo systemctl restart networking`
+        auto [NIC]:5
+        iface [NIC]:5 inet static
+        address 192.168.95.15
+        netmask 255.255.255.0
 
-
+4. Restart networking: `sudo systemctl restart networking`
